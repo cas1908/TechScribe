@@ -1,5 +1,5 @@
-import { UserDetails } from "../src/types/user"
-import { initialState } from "../src/context/AuthContext";
+import { UserDetails } from "../types/user"
+import { initialState } from "../context/AuthContext";
 
 
 // useReducer action type
