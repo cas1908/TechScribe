@@ -7,9 +7,6 @@ export const AuthLayout = () => {
 
   const userId = useLocation();
 
-  useEffect(() => {
-    console.log(userId.pathname);
-  }, []);
 
   return (
     <div>
@@ -19,14 +16,14 @@ export const AuthLayout = () => {
             <h2 className="text-3xl font-bold mb-8 text-center -tracking-tighter">
               CHATTER
             </h2>
-            <p className="text-lg">
+            <p className="text-lg text-center px-2">
               Unleash the power of Words, Connect with Like-minded Readers and
               Writers
             </p>
           </div>
         </section>
-        <section className={["pt-10 relative -shadow-xl shadow-white-500 -top-[100px] bg-white border-2 border-white rounded-t-[50px] z-50 w-full lg:w-1/2 flex flex-col items-center", [userId.pathname === "/signin" ? "h-[800px]" : "h-auto"]].join(" ")}>
-          <div className="mt-10 font-bold flex w-[520px]">
+        <section className={["pt-10 relative shadow-2xl shadow-black/90 -top-[100px] bg-white border-2 border-white rounded-t-[50px] z-50 w-full lg:w-1/2 flex flex-col items-center", [userId.pathname === "/signin" ? "h-[800px]" : "h-auto"]].join(" ")}>
+          <div className="mt-10 font-bold flex w-3/4 md:w-[520px]">
             <Link
               to="/signup"
               className={[

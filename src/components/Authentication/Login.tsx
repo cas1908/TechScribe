@@ -27,7 +27,7 @@ const Login = () => {
           </label>
           <br />
           <input
-            className="w-[520px] py-[10px] px-[14px] border border-cyan-100 mt-2 rounded-md shadow-sm shadow-cyan-100"
+            className="w-[300px] md:w-[520px] py-[10px] px-[14px] border border-cyan-100 mt-2 rounded-md shadow-sm shadow-cyan-100"
             type="email"
             name="email"
             id="email"
@@ -42,7 +42,7 @@ const Login = () => {
           <br />
 
           <input
-            className="w-[520px] py-[10px] px-[14px] border border-cyan-100 mt-2 rounded-md shadow-sm shadow-cyan-100"
+            className="w-[300px] md:w-[520px] py-[10px] px-[14px] border border-cyan-100 mt-2 rounded-md shadow-sm shadow-cyan-100"
             type="password"
             name="password"
             id="password"
@@ -51,14 +51,14 @@ const Login = () => {
           />
           <br />
           <br />
-          <button className="w-[520px] text-center bg-blue-700 text-white font-bold py-[10px] px-[14px] rounded-md">
+          <button className="w-[300px] md:w-[520px] text-center bg-blue-700 text-white font-bold py-[10px] px-[14px] rounded-md">
             Log in
           </button>
         </form>
         <section className="my-6">
           <button
             onClick={popUp}
-            className="w-[520px] text-center bg-white text-black border border-gray-200 shadow-sm shadow-gray-200 font-semibold py-[10px] px-[14px] rounded-md"
+            className="w-[300px] md:w-[520px] text-center bg-white text-black border border-gray-200 shadow-sm shadow-gray-200 font-semibold py-[10px] px-[14px] rounded-md"
           >
             Continue with google
           </button>
@@ -66,7 +66,7 @@ const Login = () => {
           <br />
           <button
             onClick={githubPopUp}
-            className="w-[520px] text-center bg-white text-black border border-gray-200 shadow-sm shadow-gray-200 font-semibold py-[10px] px-[14px] rounded-md"
+            className="w-[300px] md:w-[520px] text-center bg-white text-black border border-gray-200 shadow-sm shadow-gray-200 font-semibold py-[10px] px-[14px] rounded-md"
           >
             Continue with GitHub
           </button>
