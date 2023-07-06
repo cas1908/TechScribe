@@ -11,7 +11,7 @@ export const AuthLayout = () => {
   return (
     <div>
       <div className="lg:flex h-[1024px]">
-        <section className="relative z-20 bg-green-500 w-full flex items-center justify-center border-2 lg:w-1/2 px-5 h-[400px] lg:h-full">
+        <section className="relative z-20 bg-green-500 w-full flex items-center justify-center lg:w-1/2 px-5 h-[400px] lg:h-full">
           <div className="lg:absolute lg:top-[30%]">
             <h2 className="text-3xl font-bold mb-8 text-center -tracking-tighter">
               TechScribe
