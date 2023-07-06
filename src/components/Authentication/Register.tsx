@@ -136,7 +136,7 @@ const Signup = () => {
           />
           <br />
           <br />
-          <button className="w-[300px] md:w-[520px] text-center bg-blue-700 text-white font-bold py-[10px] px-[14px] rounded-md">
+          <button className="w-[300px] md:w-[520px] text-center bg-green-600 text-white font-bold py-[10px] px-[14px] rounded-md">
             Create account
           </button>
         </form>

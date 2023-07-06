@@ -11,14 +11,13 @@ export const AuthLayout = () => {
   return (
     <div>
       <div className="lg:flex h-[1024px]">
-        <section className="relative z-20 bg-cyan-500 w-full flex items-center justify-center border-2 lg:w-1/2 px-5 h-[500px] lg:h-full">
+        <section className="relative z-20 bg-green-500 w-full flex items-center justify-center border-2 lg:w-1/2 px-5 h-[400px] lg:h-full">
           <div className="lg:absolute lg:top-[30%]">
             <h2 className="text-3xl font-bold mb-8 text-center -tracking-tighter">
-              CHATTER
+              TechScribe
             </h2>
             <p className="text-lg text-center px-2">
-              Unleash the power of Words, Connect with Like-minded Readers and
-              Writers
+            Discover, Connect, and Empower.
             </p>
           </div>
         </section>
@@ -28,7 +27,7 @@ export const AuthLayout = () => {
               to="/signup"
               className={[
                 "w-2/4 py-2 border-b-8",
-                [userId.pathname === "/signup" ? "border-b-blue-600" : null],
+                [userId.pathname === "/signup" ? "border-b-green-600" : null],
               ].join(" ")}
             >
               REGISTER
@@ -37,7 +36,7 @@ export const AuthLayout = () => {
               to="/signin"
               className={[
                 "w-2/4 py-2 text-right border-b-8",
-                [userId.pathname === "/signin" ? "border-b-blue-600" : null],
+                [userId.pathname === "/signin" ? "border-b-green-600" : null],
               ].join(" ")}
             >
               LOG IN

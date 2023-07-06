@@ -9,7 +9,7 @@ function Header() {
 
   return (
     <header className="sticky z-50 shadow-md bg-white top-0 flex px-5 md:px-12 py-2 justify-between items-center">
-        <h2 className="text-lg font-semibold md:text-3xl text-blue-700">CHATTER</h2>
+        <h2 className="text-lg font-semibold md:text-3xl text-blue-700">TechScribe</h2>
         <input className='md:w-[300px] border text-sm p-1 w-[200px] md:p-2 px-4 rounded-full' type="text" name='search-box' placeholder='search Chatter' />
 
         
