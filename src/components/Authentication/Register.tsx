@@ -5,7 +5,9 @@ import {
   useEmailAndPassword,
 } from "../../hooks";
 import { AuthContext } from "../../context/AuthContext";
-import { Link, NavLink } from "react-router-dom";
+import GoogleIcon from "../../assets/google-icon.svg"
+import GithubIcon from "../../assets/github.svg"
+
 
 
 // SignUp component
@@ -140,20 +142,23 @@ const Signup = () => {
             Create account
           </button>
         </form>
-        <section className="my-6">
-          <button
+        <div className="flex justify-between items-center my-6">
+          <hr className=" w-2/5" />
+          <span>or</span>
+          <hr className=" w-2/5" />
+        </div>
+        <section className="flex justify-evenly">
+        <button
             onClick={popUp}
-            className="w-[300px] md:w-[520px] text-center bg-white text-black border border-gray-200 shadow-sm shadow-gray-200 font-semibold py-[10px] px-[14px] rounded-md"
+            className=" text-center bg-white text-black border border-gray-200 shadow-sm shadow-gray-200 font-semibold py-[10px] px-[14px] rounded-md"
           >
-            Continue with google
+            <img src={GoogleIcon} alt="Google icon" />
           </button>
-          <br />
-          <br />
           <button
             onClick={githubPopUp}
-            className="w-[300px] md:w-[520px] text-center bg-white text-black border border-gray-200 shadow-sm shadow-gray-200 font-semibold py-[10px] px-[14px] rounded-md"
+            className=" text-center bg-white text-black border border-gray-200 shadow-sm shadow-gray-200 font-semibold py-[10px] px-[14px] rounded-md"
           >
-            Continue with GitHub
+            <img src={GithubIcon} alt="GitHub icon" />
           </button>
         </section>
       </div>
