@@ -19,7 +19,7 @@ export const useEmailAndPassword = ()=> {
             await updateProfile(auth.currentUser!, { displayName: name} )
             console.log(user);
             await setDoc(doc(db,"users", user.uid), {name: name , email: user.email, avatar: user.photoURL, uid: user.uid})
-            navigate("/feed-interest")
+            navigate("/")
 
           } catch(error: string | any) {
             console.log(email)

@@ -28,7 +28,7 @@ const Login = () => {
           </label>
           <br />
           <input
-            className="w-[300px] md:w-[520px] py-[10px] px-[14px] border border-cyan-100 mt-2 rounded-md shadow-sm shadow-cyan-100"
+            className="w-[300px] md:w-[520px] lg:w-[400px] xl:w-[520px] py-[10px] px-[14px] border border-cyan-100 mt-2 rounded-md shadow-sm shadow-cyan-100"
             type="email"
             name="email"
             id="email"
@@ -43,7 +43,7 @@ const Login = () => {
           <br />
 
           <input
-            className="w-[300px] md:w-[520px] py-[10px] px-[14px] border border-cyan-100 mt-2 rounded-md shadow-sm shadow-cyan-100"
+            className="w-[300px] md:w-[520px] lg:w-[400px] xl:w-[520px] py-[10px] px-[14px] border border-cyan-100 mt-2 rounded-md shadow-sm shadow-cyan-100"
             type="password"
             name="password"
             id="password"
@@ -52,7 +52,7 @@ const Login = () => {
           />
           <br />
           <br />
-          <button className="w-[300px] md:w-[520px] text-center bg-green-600 text-white font-bold py-[10px] px-[14px] rounded-md">
+          <button className="w-[300px] md:w-[520px] lg:w-[400px] xl:w-[520px] text-center bg-green-600 text-white font-bold py-[10px] px-[14px] rounded-md">
             Log in
           </button>
         </form>

@@ -36,7 +36,7 @@ const Signup = () => {
         </h2>
         <br />
         <form onSubmit={handleSubmit}>
-          <section className="flex flex-wrap gap-6 md:gap-0 justify-between w-[300px] md:w-[520px]">
+          <section className="flex flex-wrap gap-6 md:gap-0 justify-between w-[300px] md:w-[520px] lg:w-[400px] xl:w-[520px]">
             <div className="w-full md:w-[49%]">
               <label htmlFor="first-name" className="text-lg ">
                 First name
@@ -95,7 +95,7 @@ const Signup = () => {
           </label>
           <br />
           <input
-            className="w-[300px] md:w-[520px] py-[10px] px-[14px] border border-gray-200 shadow-sm shadow-gray-200 mt-2 rounded-md "
+            className="w-[300px] md:w-[520px] lg:w-[400px] xl:w-[520px] py-[10px] px-[14px] border border-gray-200 shadow-sm shadow-gray-200 mt-2 rounded-md "
             type="email"
             name="email"
             id="email"
@@ -113,7 +113,7 @@ const Signup = () => {
           <br />
 
           <input
-            className="w-[300px] md:w-[520px] py-[10px] px-[14px] border border-gray-200 shadow-sm shadow-gray-200 mt-2 rounded-md "
+            className="w-[300px] md:w-[520px] lg:w-[400px] xl:w-[520px] py-[10px] px-[14px] border border-gray-200 shadow-sm shadow-gray-200 mt-2 rounded-md "
             type="password"
             name="email"
             id="password"
@@ -130,7 +130,7 @@ const Signup = () => {
           <br />
 
           <input
-            className="w-[300px] md:w-[520px] py-[10px] px-[14px] border border-gray-200 shadow-sm shadow-gray-200 mt-2 rounded-md "
+            className="w-[300px] md:w-[520px] lg:w-[400px] xl:w-[520px] py-[10px] px-[14px] border border-gray-200 shadow-sm shadow-gray-200 mt-2 rounded-md "
             type="password"
             name="email"
             id="confirm-password"
@@ -138,7 +138,7 @@ const Signup = () => {
           />
           <br />
           <br />
-          <button className="w-[300px] md:w-[520px] text-center bg-green-600 text-white font-bold py-[10px] px-[14px] rounded-md">
+          <button className="w-[300px] md:w-[520px] lg:w-[400px] xl:w-[520px] text-center bg-green-600 text-white font-bold py-[10px] px-[14px] rounded-md">
             Create account
           </button>
         </form>
