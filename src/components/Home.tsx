@@ -1,12 +1,18 @@
 import { Link } from "react-router-dom";
 import { getDoc, doc } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { db } from "../firebase-config";
 import MenuBtn from "../assets/menu.svg";
 import CloseMenuBtn from "../assets/close.svg";
+import { Loading } from "./Loading";
+import { AuthContext } from "../context/AuthContext";
+import readImg from '../assets/read.jpg'
+import connectImg from '../assets/connect.jpg'
+import writeImg from '../assets/write.jpg'
 
 export const Home = () => {
-  const [openMenuBar, setOpenMenuBar] = useState(false);  
+  const [openMenuBar, setOpenMenuBar] = useState(false);
+  const {state, dispatch} = useContext(AuthContext)  
 
   // useEffect(() => {
   // getUser();
@@ -26,14 +32,15 @@ export const Home = () => {
     
   // };
 
-  
+  setTimeout(()=> dispatch({type: "IS_LOADING", payload: false}), 2000)
 
 
   return (
-    <div>
+    <>
+      {state.isLoading? <Loading /> : (    <div>
       <header className="lg:px-[5%] sticky z-50 shadow-md bg-white top-0 flex px-5 md:px-12 py-3 justify-between items-center">
-        <h2 className="text-lg md:text-2xl font-semibold text-blue-700">TechScribe</h2>
-        <nav className={["bg-white flex flex-col gap-10 top-[100%] lg:shadow-none shadow-lg shadow-black/20 z-40 right-0 lg:flex-row absolute lg:relative py-8 lg:py-2 rounded-b-xl w-[250px] lg:w-3/4 justify-between items-center ", [openMenuBar? "max-md:flex" : " max-md:hidden"] ].join()}>
+      <Link to='/' className="text-lg font-semibold md:text-xl xl:text-2xl text-blue-700">TechScribe</Link>
+        <nav className={["bg-white flex flex-col gap-10 top-[100%] lg:shadow-none shadow-lg shadow-black/20 z-40 right-0 lg:flex-row absolute lg:relative py-8 lg:py-2 rounded-b-xl w-[250px] lg:w-3/4 justify-between items-center ", [openMenuBar? " max-lg:flex" : " max-lg:hidden"] ].join()}>
           <ul className="flex flex-col xl:ml-24 xl:gap-10 xl:text-lg lg:flex-row gap-6">
             <li>Home</li>
             <li>About us</li>
@@ -74,7 +81,7 @@ export const Home = () => {
             </Link>
           </div>
         </section>
-        <section className="py-16 border xl:w-[90%] xl:mx-auto">
+        <section className="py-16 xl:w-[90%] xl:mx-auto">
           <div className="flex max-md:flex-wrap justify-between items-start px-6 md:px-12 pb-10 gap-10">
             <div className="text-center md:w-3/5">
               <h2 className="font-semibold text-2xl md:text-3xl mb-8">About <span className="text-blue-700">TechScribe</span></h2>
@@ -129,7 +136,7 @@ export const Home = () => {
               sequi dolore totam dolorem culpa ad explicabo, aliquam voluptate
               perspiciatis ipsam facere quisquam."
             </p>
-            <h3 className="mt-5 mb-8 text-sm md:text-xl font-semibold">
+            <h3 className="mt-5 mb-8 text-sm md:text-lg font-semibold">
               John Doe,{" "}
               <span className="w-3/5 text-xs md:text-base text-gray-700">
                 software developer @AltSchool_Africa
@@ -137,7 +144,7 @@ export const Home = () => {
             </h3>
             <Link
               to="/signup"
-              className="bg-blue-800 text-sm text-white border border-blue-800 px-4 md:px-7 py-2 md:py-3 rounded-lg"
+              className="bg-blue-800 text-white border border-blue-800 px-4 md:px-5 lg:px-7 lg:py-3 py-2 md:py-2 rounded-lg"
             >
               Join TechScribe
             </Link>
@@ -145,14 +152,14 @@ export const Home = () => {
           </div>
           
         </section>
-        <section className="flex flex-wrap lg:justify-center lg:gap-0 p-8 lg:p-20 md:gap-16">
+        <section className="flex flex-wrap items-center md:justify-center lg:gap-0 p-8 md:p-8 lg:p-20 md:gap-0">
           <div className="w-1/3">
-            <div className="border-2 border-blue-500 h-[80px] md:h-[100px] xl:h-[130px] w-[80px] md:w-[100px] xl:w-[130px] rounded-full"></div>
-            <div className="border-2 border-blue-500 h-[80px] md:h-[100px] xl:h-[130px] w-[80px] md:w-[100px] xl:w-[130px] rounded-full relative left-[100px] md:left-[140px] -top-6"></div>
-            <div className="border-2 border-blue-500 h-[80px] md:h-[100px] xl:h-[130px] w-[80px] md:w-[100px] xl:w-[130px] rounded-full relative -top-12"></div>
+            <div className="border-2 border-blue-500 h-[100px] lg:h-[120px] xl:h-[150px] w-[100px] lg:w-[120px] xl:w-[150px] rounded-full relative top-5 xl:top-10"><img src={readImg} alt="reading" className="w-full h-full object-cover rounded-full" /></div>
+            <div className="border-2 border-blue-500 h-[100px] lg:h-[120px] xl:h-[150px] w-[100px] lg:w-[120px] xl:w-[150px] rounded-full relative left-[100px] md:left-[100px] xl:left-[140px] top-0"><img src={connectImg} alt="reading" className="w-full h-full object-cover rounded-full" /></div>
+            <div className="border-2 border-blue-500 h-[100px] lg:h-[120px] xl:h-[150px] w-[100px] lg:w-[120px] xl:w-[150px] rounded-full relative -top-5 xl:-top-10"><img src={writeImg} alt="reading" className="w-full h-full object-cover rounded-full" /></div>
           </div>
           <div className="md:w-1/2 lg:pr-6 xl:pr-0">
-            <h2 className="text-2xl md:text-3xl md:leading-[50px] font-semibold">
+            <h2 className="text-xl md:text-2xl xl:text-3xl md:leading-10 xl:leading-[50px] font-semibold">
               Write, read and connect <br /> with great minds on chatter
             </h2>
             <p className="my-5 lg:w-3/5">
@@ -162,7 +169,7 @@ export const Home = () => {
             <br />
             <Link
               to="/signup"
-              className="bg-blue-800 text-white border border-blue-800 px-4 md:px-7 py-2 md:py-3 rounded-lg"
+              className="bg-blue-800 text-white border border-blue-800 px-4 md:px-5 lg:px-7 lg:py-3 py-2 md:py-2 rounded-lg"
             >
               Get started
             </Link>
@@ -172,8 +179,8 @@ export const Home = () => {
         </section>
       </main>
       <footer className="bg-yellow-100">
-        <div className=" lg:mx-auto flex flex-col md:flex-row px-5 md:px-16 justify-between pt-6 md:pt-12 pb-20">
-        <h2 className="text-lg md:text-2xl font-semibold text-blue-700 md:relative top-5">TechScribe</h2>
+        <div className="lg:px-[5%] lg:mx-auto flex flex-col md:flex-row px-5 md:px-12 justify-between pt-6 md:pt-12 pb-20">
+        <Link to='/' className="text-lg md:text-2xl xl:text-2xl font-semibold text-blue-700 md:relative top-5">TechScribe</Link>
         <div className="md:w-3/4 -ml-6 md:ml-0 mt-5 md:mt-0">
           <ul className="flex justify-around">
             <li className="flex flex-col gap-5 md:text-lg font-semibold">
@@ -205,6 +212,8 @@ export const Home = () => {
         </div>
         
       </footer>
-    </div>
+    </div>)}
+    </>
+
   );
 };
