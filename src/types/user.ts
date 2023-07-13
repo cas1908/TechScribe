@@ -7,7 +7,7 @@ export interface UserDetails {
     photoURL: string;
     uid: string;
     emailVerified: boolean;
-    isAuth: boolean;
+    
   }
   isLoading: boolean
 }

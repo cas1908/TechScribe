@@ -12,7 +12,7 @@ export const initialState: UserDetails = {
         photoURL: "",
         uid: "",
         emailVerified: false,
-        isAuth: false,
+        
     },
     isLoading: true
 }

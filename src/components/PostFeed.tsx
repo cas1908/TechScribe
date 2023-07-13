@@ -5,6 +5,7 @@ import { DocumentData, QuerySnapshot, collection, getDocs, onSnapshot } from "fi
 import { db } from "../firebase-config";
 import { Article } from "./Article";
 import {Timestamp} from "firebase/firestore"
+import { Loading } from "./Loading";
 
 export interface PostFeedProps {
   id?: string,
@@ -28,7 +29,6 @@ export const PostFeed = () => {
         setArticle(
             snapshot.docs.map((doc)=> {
               const data = doc.data()
-              console.log(data)
               return {
                 id: doc.id,
                 title: data.title,
@@ -44,7 +44,6 @@ export const PostFeed = () => {
             }))
             
         })
-        console.log(article)
         
     },[]);
 
@@ -65,11 +64,11 @@ export const PostFeed = () => {
           </ul>
         </div>
         <section className="p-4 border w-full md:w-[90%] mx-auto mt-4">
-           {article && article.map((post: PostFeedProps) => {
+           {article ? article.map((post: PostFeedProps) => {
             return (
               <Article key={post.id} title={post.title} coverPhoto={post.coverPhoto} content={post.content} author={post.author} date={post.date} />
             );
-          })}
+          }) : <Loading />}
           
         </section>
       </div>

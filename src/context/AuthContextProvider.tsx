@@ -16,7 +16,7 @@ export const AuthContextProvider = ({ children }:{children : React.ReactNode }) 
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 console.log(user)
-                dispatch({type: "SIGN_IN", payload: user})
+                dispatch({type: "SIGN_IN", payload: user})       
             } else {
                 dispatch({type: "SIGN_OUT"})
             }

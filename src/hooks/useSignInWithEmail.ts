@@ -15,8 +15,8 @@ export const useSignInWithEmail = ()=> {
             await setPersistence(auth, browserLocalPersistence)
             const userCredential = await signInWithEmailAndPassword(auth, state.user.email, state.user.password);
             const user = userCredential.user;
-            dispatch({type: 'IS_AUTHENTICATED', payload: true})
-            // dispatch({type: "SIGN_IN", payload: user})
+            // dispatch({type: 'IS_AUTHENTICATED', payload: true})
+            dispatch({type: "SIGN_IN", payload: user})
             navigate("/")
             setTimeout(()=> dispatch({type: "IS_LOADING", payload: false}), 10000)
         } catch(error: string | any) {
