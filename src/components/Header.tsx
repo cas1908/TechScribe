@@ -17,7 +17,7 @@ function Header() {
         
         <div className="flex flex-col-reverse items-center gap-2">
           {/* <h4 className='font-normal text-sm'>Hello, {user?.displayName}</h4> */}
-          <button onClick={()=> setShowNavBar(prev=> !prev)} className='md:w-[50px] md:h-[50px] w-[40px] rounded-full border-2 border-blue-600'>{ user?.photoURL ? (<img src={user.photoURL} alt="Profile pic" className='w-full rounded-full border border-white object-contain' />) : (<img src={AnonymousAvatar} alt="Anonymous Avatar" className='w-full rounded-full border border-white object-contain' />)}</button>
+          <button onClick={()=> setShowNavBar(prev=> !prev)} className='md:w-[50px] md:h-[50px] w-[40px] h-[40px] rounded-full border-2 border-blue-600'>{ user?.photoURL ? (<img src={user.photoURL} alt="Profile pic" className='w-full rounded-full border border-white object-contain' />) : (<img src={AnonymousAvatar} alt="Anonymous Avatar" className='w-full rounded-full border border-white object-contain' />)}</button>
         </div>
         
         {  showNavBar? (<NavBar />) : null}
