@@ -17,6 +17,10 @@ export const reducer = (state: UserDetails = initialState, action: ActionType) =
           return { ...state, user: action.payload};
         case "SIGN_OUT":
             return { ...state, user: null};
+        case "IS_AUTHENTICATED":
+          return { ...state,  isAuth:action.payload}
+        case "IS_LOADING":
+          return { ...state, isLoading:action.payload}
         case "SET_FNAME":
             return { ...state, user: {...state.user, displayName: {...state.user.displayName, first: action.payload}}}
         case "SET_LNAME":

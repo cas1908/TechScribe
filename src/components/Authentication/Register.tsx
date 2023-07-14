@@ -5,10 +5,10 @@ import {
   useEmailAndPassword,
 } from "../../hooks";
 import { AuthContext } from "../../context/AuthContext";
-import { Link, NavLink } from "react-router-dom";
+import GoogleIcon from "../../assets/google-icon.svg"
+import GithubIcon from "../../assets/github.svg"
 
-// RegEx for inputs
-// const matchEmail = new RegExp("^([\\w]+)\@[\\w]+\.[\\w]+$")
+
 
 // SignUp component
 const Signup = () => {
@@ -26,10 +26,6 @@ const Signup = () => {
       `${[state.user.displayName.first, state.user.displayName.last].join(" ")}`
     );
 
-    // alert(state.email + " " + state.password)
-    // console.log("submitted");
-    // console.log(matchEmail.test(state.email))
-    // console.log(state.email.match(matchEmail))
   };
 
   return (
@@ -40,8 +36,8 @@ const Signup = () => {
         </h2>
         <br />
         <form onSubmit={handleSubmit}>
-          <section className="flex justify-between w-[520px]">
-            <div className="w-[49%]">
+          <section className="flex flex-wrap gap-6 md:gap-0 justify-between w-[300px] md:w-[520px] lg:w-[400px] xl:w-[520px]">
+            <div className="w-full md:w-[49%]">
               <label htmlFor="first-name" className="text-lg ">
                 First name
               </label>
@@ -58,7 +54,7 @@ const Signup = () => {
                 autoComplete="on"
               />
             </div>
-            <div className="w-[49%]">
+            <div className="w-full md:w-[49%]">
               <label htmlFor="last-name" className="text-lg ">
                 Last name
               </label>
@@ -92,14 +88,14 @@ const Signup = () => {
               </option>
               <option value="Reader">Reader</option>
             </select> 
-          </section> */}
-          <br />
+          </section> 
+          <br /> */}
           <label htmlFor="email" className="text-lg ">
             Email address
           </label>
           <br />
           <input
-            className="w-[520px] py-[10px] px-[14px] border border-gray-200 shadow-sm shadow-gray-200 mt-2 rounded-md "
+            className="w-[300px] md:w-[520px] lg:w-[400px] xl:w-[520px] py-[10px] px-[14px] border border-gray-200 shadow-sm shadow-gray-200 mt-2 rounded-md "
             type="email"
             name="email"
             id="email"
@@ -117,7 +113,7 @@ const Signup = () => {
           <br />
 
           <input
-            className="w-[520px] py-[10px] px-[14px] border border-gray-200 shadow-sm shadow-gray-200 mt-2 rounded-md "
+            className="w-[300px] md:w-[520px] lg:w-[400px] xl:w-[520px] py-[10px] px-[14px] border border-gray-200 shadow-sm shadow-gray-200 mt-2 rounded-md "
             type="password"
             name="email"
             id="password"
@@ -134,7 +130,7 @@ const Signup = () => {
           <br />
 
           <input
-            className="w-[520px] py-[10px] px-[14px] border border-gray-200 shadow-sm shadow-gray-200 mt-2 rounded-md "
+            className="w-[300px] md:w-[520px] lg:w-[400px] xl:w-[520px] py-[10px] px-[14px] border border-gray-200 shadow-sm shadow-gray-200 mt-2 rounded-md "
             type="password"
             name="email"
             id="confirm-password"
@@ -142,24 +138,27 @@ const Signup = () => {
           />
           <br />
           <br />
-          <button className="w-[520px] text-center bg-blue-700 text-white font-bold py-[10px] px-[14px] rounded-md">
+          <button className="w-[300px] md:w-[520px] lg:w-[400px] xl:w-[520px] text-center bg-green-600 text-white font-bold py-[10px] px-[14px] rounded-md">
             Create account
           </button>
         </form>
-        <section className="my-6">
-          <button
+        <div className="flex justify-between items-center my-6">
+          <hr className=" w-2/5" />
+          <span>or</span>
+          <hr className=" w-2/5" />
+        </div>
+        <section className="flex justify-evenly">
+        <button
             onClick={popUp}
-            className="w-[520px] text-center bg-white text-black border border-gray-200 shadow-sm shadow-gray-200 font-semibold py-[10px] px-[14px] rounded-md"
+            className=" text-center bg-white text-black border border-gray-200 shadow-sm shadow-gray-200 font-semibold py-[10px] px-[14px] rounded-md"
           >
-            Continue with google
+            <img src={GoogleIcon} alt="Google icon" />
           </button>
-          <br />
-          <br />
           <button
             onClick={githubPopUp}
-            className="w-[520px] text-center bg-white text-black border border-gray-200 shadow-sm shadow-gray-200 font-semibold py-[10px] px-[14px] rounded-md"
+            className=" text-center bg-white text-black border border-gray-200 shadow-sm shadow-gray-200 font-semibold py-[10px] px-[14px] rounded-md"
           >
-            Continue with GitHub
+            <img src={GithubIcon} alt="GitHub icon" />
           </button>
         </section>
       </div>

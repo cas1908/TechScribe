@@ -2,13 +2,14 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth, db } from "../firebase-config";
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 
 export const useGooglePopUp = ()=>{
 
     const navigate = useNavigate()
-
+    const {dispatch} = useContext(AuthContext)
     
     const popUp = async () => {
         console.log("started 2")
@@ -20,6 +21,7 @@ export const useGooglePopUp = ()=>{
 
         auth.languageCode = "it"
             try {
+                dispatch({type: "IS_LOADING", payload: true})
                 const result = await signInWithPopup(auth, provider)
                 console.log("success")
                 // This gives you a Google Access Token. You can use it to access the Google API.
@@ -31,10 +33,13 @@ export const useGooglePopUp = ()=>{
                 // IdP data available using getAdditionalUserInfo(result)
                 // ...
                 
-                await setDoc(doc(db,"users", `${[user.displayName!.toLowerCase().split("-")]}`), { name: user.displayName, email: user.email, avatar: user.photoURL, uid: user.uid})
+                await setDoc(doc(db,"users", user.uid), { name: user.displayName, email: user.email, avatar: user.photoURL, uid: user.uid})
 
                 console.log(user)
+                dispatch({type: 'IS_AUTHENTICATED', payload: true})
+                
                 navigate("/")
+                setTimeout(()=> dispatch({type: "IS_LOADING", payload: false}), 10000)
             }catch(error: string | any) {
                 // Handle Errors here.
                 const errorCode = error.code;

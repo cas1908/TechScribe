@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 export const useEmailAndPassword = ()=> {
   const navigate = useNavigate()
 
-    const { state } = useContext(AuthContext)
+    const { state, dispatch } = useContext(AuthContext)
 
     const emailAndPassword = async(email: string, password: any, name: string,)=>{
         try {
@@ -19,7 +19,10 @@ export const useEmailAndPassword = ()=> {
             await updateProfile(auth.currentUser!, { displayName: name} )
             console.log(user);
             await setDoc(doc(db,"users", user.uid), {name: name , email: user.email, avatar: user.photoURL, uid: user.uid})
-            navigate("/feed-interest")
+            dispatch({type: 'IS_AUTHENTICATED', payload: true})
+            dispatch({type: "SIGN_IN", payload: user})
+
+            navigate("/")
 
           } catch(error: string | any) {
             console.log(email)
