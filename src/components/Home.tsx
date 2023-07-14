@@ -9,6 +9,8 @@ import { AuthContext } from "../context/AuthContext";
 import readImg from '../assets/read.jpg'
 import connectImg from '../assets/connect.jpg'
 import writeImg from '../assets/write.jpg'
+import TechScribeSnip from "../assets/TechScribe.jpg"
+
 
 export const Home = () => {
   const [openMenuBar, setOpenMenuBar] = useState(false);
@@ -89,7 +91,7 @@ export const Home = () => {
               TechScribe is a vibrant online community dedicated to all things technology. Our platform serves as a collaborative space where developers, tech enthusiasts, and industry professionals come together to share their knowledge, ideas, and experiences.
               </p>
             </div>
-            <div className="w-full md:w-2/5 h-[300px] border-2 border-green-700"></div>
+            <div className="w-full md:w-2/5 h-[300px] border-2 border-green-700"><img src={TechScribeSnip} className="w-full object-top object-cover h-full" alt="View of techScribe" /></div>
           </div>
           <div className="py-10">
             <div className="w-4/5 mx-auto text-center">
@@ -128,23 +130,16 @@ export const Home = () => {
         </section>
         <section className="bg-yellow-100 ">
           <div className="xl:w-4/5 xl:mx-auto flex flex-col md:flex-row py-14 md:pt-20 md:pb-28 items-center md:px-16  gap-4 md:gap-16">
-          <div className="border-2 border-blue-500 md:h-[220px] h-[80px] w-1/5 md:w-2/4 lg:w-1/4 rounded-full"></div>
+          <div className="border-2 border-blue-500 md:h-[220px] w-[150px] h-[150px] md:w-2/4 lg:w-1/4 rounded-full"><img src="" className="h-full w-full rounded-full" alt="photo of Samuel Chima" /></div>
           <div className="w-4/5">
-            <p className="text-sm lg:text-base">
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptates, aut suscipit? Laboriosam ipsa odit ullam esse modi
-              sequi dolore totam dolorem culpa ad explicabo, aliquam voluptate
-              perspiciatis ipsam facere quisquam."
+            <p className="text-base">
+              Hi, I'm Samuel Chima, and I'm currently a Frontend Engineer. TechScribe was built as a capstone project during my last days in the AltSchool Africa's School of Engineering. I was inpired by the team's effort in developing youths in Africa. TechScribe serves as a platform that keeps me, my fellow graduants and the rest of the world in contact on new methodologies, principles, tools and ideas. Be a part of this awesome community!
             </p>
-            <h3 className="mt-5 mb-8 text-sm md:text-lg font-semibold">
-              John Doe,{" "}
-              <span className="w-3/5 text-xs md:text-base text-gray-700">
-                software developer @AltSchool_Africa
-              </span>
-            </h3>
+            <br />
+            <br />
             <Link
               to="/signup"
-              className="bg-blue-800 text-white border border-blue-800 px-4 md:px-5 lg:px-7 lg:py-3 py-2 md:py-2 rounded-lg"
+              className="bg-blue-800 bl text-white border border-blue-800 px-5 lg:px-7 lg:py-3 py-3 rounded-lg"
             >
               Join TechScribe
             </Link>
@@ -169,7 +164,7 @@ export const Home = () => {
             <br />
             <Link
               to="/signup"
-              className="bg-blue-800 text-white border border-blue-800 px-4 md:px-5 lg:px-7 lg:py-3 py-2 md:py-2 rounded-lg"
+              className="bg-blue-800 text-white border border-blue-800 px-5 lg:px-7 lg:py-3 py-3 rounded-lg"
             >
               Get started
             </Link>
