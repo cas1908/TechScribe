@@ -34,8 +34,17 @@ export const router = createBrowserRouter([
     Component: FeedPersonalizedData
   },
   {
-    path: "/edit-new-post",
-    Component: MarkdownLayout
+    path: "/",
+    Component: MarkdownLayout,
+    children: [
+      {
+        path: "/edit-new-post",
+        Component: Login,
+      },
+      {
+        path: "/preview-new-post",
+        Component: Register,
+      }]
   }
 
 ]);
